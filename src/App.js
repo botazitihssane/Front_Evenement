@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import SignUp from "./views/auth/signup";
+import SignIn from "./views/auth/signin";
+import React from "react";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import Dashboard from "./views/auth/redirectionTest";
 
+const isAuthenticated = () => {
+  return localStorage.getItem("user") !== null;
+};
+
+const PrivateRoute = ({ element }) => {
+  if (isAuthenticated()) {
+    return element;
+  } else {
+    return <Navigate to="/signin" />;
+  }
+};
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route
+          path="/dashboard"
+          element={<PrivateRoute element={<Dashboard />} />}
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
