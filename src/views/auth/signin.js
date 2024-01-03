@@ -36,7 +36,7 @@ export default function SignIn() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8080/events/auth/signin",
+        "http://localhost:8080/gestion_events/auth/signin",
         {
           username,
           password,

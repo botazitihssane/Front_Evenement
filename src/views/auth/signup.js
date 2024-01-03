@@ -112,13 +112,13 @@ export default function SignUp() {
       return;
     }
     axios
-      .post("http://localhost:8080/events/auth/signup", {
+      .post("http://localhost:8080/gestion_events/auth/signup", {
         username,
         email,
         password,
         nom,
         prenom,
-        role: ["manager"],
+        roleName: "manager",
       })
       .then((response) => {
         console.log(response);

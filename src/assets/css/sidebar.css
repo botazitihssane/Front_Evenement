@@ -1,0 +1,33 @@
+/* Sidebar.css */
+.navbar-vertical {
+  background-color: #2c3e50; /* Sidebar background color */
+  color: #ecf0f1; /* Text color */
+}
+
+.navbar-vertical .navbar-toggler {
+  background-color: #3498db; /* Toggler button color */
+}
+
+.navbar-vertical .navbar-toggler-icon {
+  background-color: #ecf0f1; /* Toggler icon color */
+}
+
+.navbar-brand-img {
+  max-width: 80px; /* Max width for the logo image */
+}
+
+.navbar-vertical .nav-link {
+  color: #ecf0f1; /* Link text color */
+}
+
+.navbar-vertical .nav-link:hover {
+  background-color: #3498db; /* Hover color */
+  color: #ecf0f1; /* Hover text color */
+}
+
+.navbar-vertical .active {
+  background-color: #3498db; /* Active link color */
+  color: #ecf0f1; /* Active text color */
+}
+
+/* Adjust other styles as needed */

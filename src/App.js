@@ -3,7 +3,8 @@ import SignUp from "./views/auth/signup";
 import SignIn from "./views/auth/signin";
 import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Dashboard from "./views/auth/Dashboard";
+import Dashboard from "./views/dashboard/Dashboard";
+import Users from "./views/users/User";
 
 const isAuthenticated = () => {
   return localStorage.getItem("user") !== null;
@@ -22,10 +23,12 @@ function App() {
       <Routes>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/" element={<SignIn />} />
         <Route
           path="/dashboard"
           element={<PrivateRoute element={<Dashboard />} />}
         />
+        <Route path="/users" element={<PrivateRoute element={<Users />} />} />
       </Routes>
     </BrowserRouter>
   );
